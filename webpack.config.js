@@ -95,6 +95,11 @@ module.exports = async (env, options) => {
         template: "./src/comments/comments.html",
         chunks: ["polyfill", "comments"],
       }),
+      new HtmlWebpackPlugin({
+        filename: "dashboard.html",
+        template: "./src/dashboard/dashboard.html",
+        chunks: ["polyfill", "dashboard"],
+      }),
     ],
     devServer: {
       headers: {
