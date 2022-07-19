@@ -42,3 +42,23 @@ const g = getGlobal() as any;
 
 // The add-in command functions need to be available in global scope
 g.action = action;
+
+
+export async function paintData(event){
+  try {
+    await Excel.run(async (context) => {
+      const range = context.workbook.getSelectedRange();
+      range.load("address");
+      range.format.fill.color = "yellow";
+      await context.sync();
+      console.log(`The range address was ${range.address}.`);
+      event.completed();
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Office.onReady(async (info) => {
+  Office.actions.associate("paintData", paintData);
+});

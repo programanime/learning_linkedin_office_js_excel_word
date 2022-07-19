@@ -62,3 +62,21 @@ export async function runOnclick() {
     console.error(error);
   }
 }
+
+export async function getButton(){
+  
+}
+
+export async function paintData(){
+  try {
+    await Excel.run(async (context) => {
+      const range = context.workbook.getSelectedRange();
+      range.load("address");
+      range.format.fill.color = "yellow";
+      await context.sync();
+      console.log(`The range address was ${range.address}.`);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}

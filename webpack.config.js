@@ -19,7 +19,11 @@ module.exports = async (env, options) => {
     entry: {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/home.ts",
+      home: "./src/taskpane/home.ts",
       commands: "./src/commands/commands.ts",
+      wordpane: "./src/wordpane/wordpane.ts",
+      comments: "./src/comments/comments.ts",
+      dashboard: "./src/dashboard/dashboard.ts",
     },
     output: {
       devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]",
@@ -99,6 +103,11 @@ module.exports = async (env, options) => {
         filename: "dashboard.html",
         template: "./src/dashboard/dashboard.html",
         chunks: ["polyfill", "dashboard"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "wordpane.html",
+        template: "./src/wordpane/wordpane.html",
+        chunks: ["polyfill", "wordpane"],
       }),
     ],
     devServer: {

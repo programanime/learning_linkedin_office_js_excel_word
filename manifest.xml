@@ -30,6 +30,7 @@
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
+
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabInsert">
               <Group id="CommandsGroup2">
@@ -263,6 +264,22 @@
                     <SourceLocation resid="Taskpane14.Url"/>
                   </Action>
                 </Control>
+
+                <Control xsi:type="Button" id="TaskpaneButton15">
+                  <Label resid="TaskpaneButton14.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton14.Label"/>
+                    <Description resid="TaskpaneButton14.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>paintData</FunctionName>
+                    </Action>
+                </Control>
               </Group>
             </CustomTab>
           </ExtensionPoint>
@@ -299,7 +316,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>TaskpaneButton8</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="Taskpane8.Url"/>
                   </Action>
                 </Control>
               </Group>
@@ -382,7 +399,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>TaskpaneButton11</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="Taskpane8.Url"/>
                   </Action>
                 </Control>
 
@@ -418,7 +435,8 @@
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/home.html"/>
+        <bt:Url id="Taskpane8.Url" DefaultValue="https://localhost:3000/wordpane.html"/>
         <bt:Url id="Taskpane13.Url" DefaultValue="https://localhost:3000/comments.html"/>
         <bt:Url id="Taskpane14.Url" DefaultValue="https://localhost:3000/dashboard.html"/>
       </bt:Urls>
@@ -439,20 +457,25 @@
         <bt:String id="CommandsGroup12.Label" DefaultValue="Commands Group"/>
         <bt:String id="CommandsGroup13.Label" DefaultValue="Commands Group"/>
         <bt:String id="CommandsGroup14.Label" DefaultValue="Commands Group"/>
+        <bt:String id="CommandsGroup15.Label" DefaultValue="Commands Group"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="TestMenu2.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="showGallery2.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="showGallery3.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton2.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton3.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton4.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton5.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton6.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton7.Label" DefaultValue="Show Taskpane"/>
-        <bt:String id="TaskpaneButton8.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="TaskpaneButton8.Label" DefaultValue="Wordpane"/>
         <bt:String id="TaskpaneButton9.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton10.Label" DefaultValue="Show Taskpane"/>
-        <bt:String id="TaskpaneButton11.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="TaskpaneButton11.Label" DefaultValue="wordpane"/>
         <bt:String id="TaskpaneButton12.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton13.Label" DefaultValue="Comments"/>
         <bt:String id="TaskpaneButton14.Label" DefaultValue="Dashboard"/>
+        <bt:String id="TaskpaneButton15.Label" DefaultValue="Dashboard"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
@@ -470,6 +493,7 @@
         <bt:String id="TaskpaneButton12.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="TaskpaneButton13.Tooltip" DefaultValue="Comments"/>
         <bt:String id="TaskpaneButton14.Tooltip" DefaultValue="Dashboard"/>
+        <bt:String id="TaskpaneButton15.Tooltip" DefaultValue="Dashboard"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
