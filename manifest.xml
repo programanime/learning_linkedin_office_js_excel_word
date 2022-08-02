@@ -321,7 +321,7 @@
                 </Control>
               </Group>
             </OfficeTab>
-
+            
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup9">
                 <Label resid="CommandsGroup9.Label"/>
@@ -420,6 +420,22 @@
                   </Action>
                 </Control>
 
+                <Control xsi:type="Button" id="TaskpaneButton17">
+                  <Label resid="TaskpaneButton17.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton17.Label"/>
+                    <Description resid="TaskpaneButton17.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>TaskpaneButton17</TaskpaneId>
+                    <SourceLocation resid="Taskpane17.Url"/>
+                  </Action>
+                </Control>
               </Group>
             </CustomTab>
           </ExtensionPoint>
@@ -437,6 +453,7 @@
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/home.html"/>
         <bt:Url id="Taskpane8.Url" DefaultValue="https://localhost:3000/wordpane.html"/>
+        <bt:Url id="Taskpane17.Url" DefaultValue="https://localhost:3000/glossary.html"/>
         <bt:Url id="Taskpane13.Url" DefaultValue="https://localhost:3000/comments.html"/>
         <bt:Url id="Taskpane14.Url" DefaultValue="https://localhost:3000/dashboard.html"/>
       </bt:Urls>
@@ -469,6 +486,7 @@
         <bt:String id="TaskpaneButton6.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton7.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton8.Label" DefaultValue="Wordpane"/>
+        <bt:String id="TaskpaneButton17.Label" DefaultValue="Glossary"/>
         <bt:String id="TaskpaneButton9.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton10.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="TaskpaneButton11.Label" DefaultValue="wordpane"/>
@@ -487,6 +505,7 @@
         <bt:String id="TaskpaneButton6.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="TaskpaneButton7.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="TaskpaneButton8.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+        <bt:String id="TaskpaneButton17.Tooltip" DefaultValue="Glossary"/>
         <bt:String id="TaskpaneButton9.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="TaskpaneButton10.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="TaskpaneButton11.Tooltip" DefaultValue="Click to Show a Taskpane"/>

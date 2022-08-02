@@ -22,6 +22,7 @@ module.exports = async (env, options) => {
       home: "./src/taskpane/home.ts",
       commands: "./src/commands/commands.ts",
       wordpane: "./src/wordpane/wordpane.ts",
+      glossary: "./src/glossary/glossary.ts",
       comments: "./src/comments/comments.ts",
       dashboard: "./src/dashboard/dashboard.ts",
     },
@@ -108,6 +109,11 @@ module.exports = async (env, options) => {
         filename: "wordpane.html",
         template: "./src/wordpane/wordpane.html",
         chunks: ["polyfill", "wordpane"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "glossary.html",
+        template: "./src/glossary/glossary.html",
+        chunks: ["polyfill", "glossary"],
       }),
     ],
     devServer: {
