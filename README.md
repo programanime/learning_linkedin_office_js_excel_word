@@ -390,3 +390,90 @@ npm i ajv@latest
 ```
 ### conclusions
 - reinstall per project to avoid specific version issue
+
+# Angular with office add in
+1. yo office
+2. select angular
+3. to create an angular component, you need to associated the .ts file in webpack.config file
+4. add the component to the module declaration
+5. then call office api directly from the component
+> angular is loaded after Office.OnReady
+
+```shell
+yo office 
+```
+
+# React with office add in
+1. yo office
+2. select react
+3. Create your component
+  - import and put the tag in your App.tsx without any additional config
+4. again, the app get's render once office is loaded
+
+
+# fluent ui react
+[docs](https://developer.microsoft.com/en-us/fluentui)  
+
+- fluent ui has a dedicated section for react, they already have a bunch of components to work with react
+
+
+```typescriptreact
+  import { Icon } from '@fluentui/react/lib/Icon';
+```
+
+```typescriptreact
+  const MyIcon = () => <Icon iconName="CompassNW" />;
+```
+
+```typescriptreact
+  <button onClick={onClick}>
+      <MyIcon />
+      click me
+  </button>
+```
+
+# Design guidelines
+[doc](https://docs.microsoft.com/en-us/office/dev/add-ins/design/add-in-design)
+- do just one thing
+- keep consistency with office
+- adapt to several devices, touch and so on.
+  -  Context.touchEnabled 
+
+# word api
+is older than windows, comes from 1983
+![](img/word_history.png)  
+![](img/office_addin_api.png)  
+
+# Office API
+support everything, lot of boilerplate code
+
+# Word API
+simpler, but does not support word 2013
+
+# Word model
+![](img/word_model.png)  
+1. Word.run returns a context
+2. context contains a document
+3. document contains paragraphs, images and so on
+
+```javascript
+Word.run(async (context) => {
+  const paragraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
+  paragraph.font.color = "blue";
+  await context.sync();
+});
+```
+
+# Word styling
+![](img/word_syling.png)  
+
+# ECMA format
+.zip file who compress xml manifest and files that represent word document
+let you convert between native and ECMA and vice versa
+- this is how office online works
+
+# Selections and ranges
+![](img/selections_and_ranges.png)  
+
+# Images
+they use base64 to store the image data
